@@ -2,9 +2,6 @@ language: java
 jdk:
   - openjdk8
 
-env:
-  - HII_ALONE=alone
-
 before_install:
   - chmod +x gradlew
 script:
