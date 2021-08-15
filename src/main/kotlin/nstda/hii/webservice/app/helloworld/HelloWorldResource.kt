@@ -1,18 +1,12 @@
 package nstda.hii.webservice.app.helloworld
 
+import jakarta.ws.rs.Consumes
+import jakarta.ws.rs.GET
+import jakarta.ws.rs.Path
+import jakarta.ws.rs.Produces
+import jakarta.ws.rs.core.MediaType
 import nstda.hii.webservice.app.webcache.Cache
-import java.time.Instant
-import java.time.LocalDate
-import java.time.LocalDateTime
-import java.time.LocalTime
-import java.time.OffsetDateTime
-import java.time.OffsetTime
-import java.time.ZonedDateTime
-import javax.ws.rs.Consumes
-import javax.ws.rs.GET
-import javax.ws.rs.Path
-import javax.ws.rs.Produces
-import javax.ws.rs.core.MediaType
+import java.time.*
 
 @Path("/hello")
 @Produces(MediaType.APPLICATION_JSON)

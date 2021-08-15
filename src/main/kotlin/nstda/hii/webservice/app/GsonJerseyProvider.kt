@@ -17,40 +17,24 @@
 
 package nstda.hii.webservice.app
 
-import com.fatboyindustrial.gsonjavatime.InstantConverter
-import com.fatboyindustrial.gsonjavatime.LocalDateConverter
-import com.fatboyindustrial.gsonjavatime.LocalDateTimeConverter
-import com.fatboyindustrial.gsonjavatime.LocalTimeConverter
-import com.fatboyindustrial.gsonjavatime.OffsetDateTimeConverter
-import com.fatboyindustrial.gsonjavatime.OffsetTimeConverter
-import com.fatboyindustrial.gsonjavatime.ZonedDateTimeConverter
+import com.fatboyindustrial.gsonjavatime.*
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
+import jakarta.ws.rs.BadRequestException
+import jakarta.ws.rs.Consumes
+import jakarta.ws.rs.Produces
+import jakarta.ws.rs.WebApplicationException
+import jakarta.ws.rs.core.MediaType
+import jakarta.ws.rs.core.MultivaluedMap
+import jakarta.ws.rs.ext.MessageBodyReader
+import jakarta.ws.rs.ext.MessageBodyWriter
+import jakarta.ws.rs.ext.Provider
 import nstda.hii.webservice.app.GsonJerseyProvider.Companion.hiiGson
 import nstda.hii.webservice.getLogger
-import java.io.IOException
-import java.io.InputStream
-import java.io.InputStreamReader
-import java.io.OutputStream
-import java.io.OutputStreamWriter
+import java.io.*
 import java.lang.reflect.Type
-import java.time.Instant
-import java.time.LocalDate
-import java.time.LocalDateTime
-import java.time.LocalTime
-import java.time.OffsetDateTime
-import java.time.OffsetTime
-import java.time.ZonedDateTime
-import javax.ws.rs.BadRequestException
-import javax.ws.rs.Consumes
-import javax.ws.rs.Produces
-import javax.ws.rs.WebApplicationException
-import javax.ws.rs.core.MediaType
-import javax.ws.rs.core.MultivaluedMap
-import javax.ws.rs.ext.MessageBodyReader
-import javax.ws.rs.ext.MessageBodyWriter
-import javax.ws.rs.ext.Provider
+import java.time.*
 
 /**
  * ตั้งค่าตัวแปลง Object ที่ใช้ระหว่างการส่งข้อมูลไป Client ให้กลายเป็น JSON

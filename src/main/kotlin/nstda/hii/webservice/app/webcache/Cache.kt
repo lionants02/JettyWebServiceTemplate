@@ -17,10 +17,10 @@
 
 package nstda.hii.webservice.app.webcache
 
+import jakarta.ws.rs.NameBinding
+import jakarta.ws.rs.core.CacheControl
 import java.lang.annotation.Retention
 import java.lang.annotation.RetentionPolicy
-import javax.ws.rs.NameBinding
-import javax.ws.rs.core.CacheControl
 
 @NameBinding
 @Retention(RetentionPolicy.RUNTIME)

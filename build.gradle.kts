@@ -19,7 +19,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     java
-    kotlin("jvm") version "1.3.70"
+    kotlin("jvm") version "1.5.21"
     id("org.jmailen.kotlinter") version "1.26.0"
     id("com.moonlitdoor.git-version") version "0.1.1"
     id("org.jetbrains.dokka") version "0.10.1"
@@ -41,29 +41,29 @@ dependencies {
     implementation(kotlin("stdlib-jdk8"))
     implementation("args4j:args4j:2.33")
 
-    val log4jVersion = "2.13.2"
+    val log4jVersion = "2.14.1"
     implementation("org.apache.logging.log4j:log4j-core:$log4jVersion")
     implementation("org.apache.logging.log4j:log4j-slf4j-impl:$log4jVersion")
-    implementation("io.github.microutils:kotlin-logging:1.7.9")
+    implementation("io.github.microutils:kotlin-logging:2.0.10")
 
     implementation("redis.clients:jedis:3.0.1")
 
-    implementation("com.google.code.gson:gson:2.8.5")
+    implementation("com.google.code.gson:gson:2.8.7")
 
-    val fuelVersion = "2.2.2"
+    val fuelVersion = "2.3.1"
     implementation("com.github.kittinunf.fuel:fuel:$fuelVersion")
     implementation("com.github.kittinunf.fuel:fuel-gson:$fuelVersion")
 
-    implementation("com.auth0:java-jwt:3.8.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.6")
-    implementation("commons-codec:commons-codec:1.12")
+    implementation("com.auth0:java-jwt:3.18.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1")
+    implementation("commons-codec:commons-codec:1.15")
     implementation("com.fatboyindustrial.gson-javatime-serialisers:gson-javatime-serialisers:1.1.1")
     testImplementation("com.github.fppt:jedis-mock:0.1.13")
 }
 
 dependencies {
     //Core framework dependency block
-    val jerseyVersion = "2.30.1"
+    val jerseyVersion = "3.0.2"
     implementation("org.glassfish.jersey.core:jersey-common:$jerseyVersion")
     implementation("org.glassfish.jersey.inject:jersey-hk2:$jerseyVersion")
     implementation("org.glassfish.jersey.containers:jersey-container-servlet-core:$jerseyVersion")
@@ -73,18 +73,19 @@ dependencies {
     testImplementation("org.glassfish.jersey.test-framework:jersey-test-framework-core:$jerseyVersion")
     testImplementation("org.glassfish.jersey.test-framework.providers:jersey-test-framework-provider-grizzly2:$jerseyVersion")
 
-    val jettyVersion = "9.4.28.v20200408"
+    val jettyVersion = "11.0.6"
     implementation("org.eclipse.jetty:jetty-server:$jettyVersion")
     implementation("org.eclipse.jetty:jetty-servlet:$jettyVersion")
     implementation("org.eclipse.jetty:jetty-http:$jettyVersion")
 
-    testImplementation("junit:junit:4.12")
-    testImplementation("org.mockito:mockito-core:2.28.2")
-    testImplementation("org.amshove.kluent:kluent:1.53")
+    //testImplementation("junit:junit:4.13.2")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.2")
+    testImplementation("org.mockito:mockito-core:3.11.2")
+    testImplementation("org.amshove.kluent:kluent:1.68")
 }
 
 tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions.jvmTarget = "11"
 }
 
 tasks.register<Jar>("sourcesJar") {

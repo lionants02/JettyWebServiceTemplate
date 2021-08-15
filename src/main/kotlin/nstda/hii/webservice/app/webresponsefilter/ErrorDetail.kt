@@ -17,10 +17,10 @@
 
 package nstda.hii.webservice.app.webresponsefilter
 
+import jakarta.ws.rs.WebApplicationException
+import jakarta.ws.rs.core.MediaType
+import jakarta.ws.rs.core.Response
 import nstda.hii.webservice.getLogger
-import javax.ws.rs.WebApplicationException
-import javax.ws.rs.core.MediaType
-import javax.ws.rs.core.Response
 
 /**
  * เวลาเกิด Error จะส่ง Object นี้ response ไปยัง client

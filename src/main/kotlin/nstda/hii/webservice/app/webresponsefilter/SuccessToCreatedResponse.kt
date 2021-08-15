@@ -17,13 +17,13 @@
 
 package nstda.hii.webservice.app.webresponsefilter
 
-import javax.annotation.Priority
-import javax.ws.rs.HttpMethod
-import javax.ws.rs.Priorities
-import javax.ws.rs.container.ContainerRequestContext
-import javax.ws.rs.container.ContainerResponseContext
-import javax.ws.rs.container.ContainerResponseFilter
-import javax.ws.rs.ext.Provider
+import jakarta.annotation.Priority
+import jakarta.ws.rs.HttpMethod
+import jakarta.ws.rs.Priorities
+import jakarta.ws.rs.container.ContainerRequestContext
+import jakarta.ws.rs.container.ContainerResponseContext
+import jakarta.ws.rs.container.ContainerResponseFilter
+import jakarta.ws.rs.ext.Provider
 
 /**
  * หาก client POST เข้ามาแล้วสำเร็จ ให้ส่งกลับเป็น 201

@@ -17,13 +17,13 @@
 
 package nstda.hii.webservice.app.webcache
 
+import jakarta.ws.rs.container.ContainerRequestContext
+import jakarta.ws.rs.container.ContainerResponseContext
+import jakarta.ws.rs.container.ContainerResponseFilter
+import jakarta.ws.rs.core.EntityTag
+import jakarta.ws.rs.ext.Provider
 import nstda.hii.webservice.app.GsonJerseyProvider.Companion.hiiGson
 import java.security.MessageDigest
-import javax.ws.rs.container.ContainerRequestContext
-import javax.ws.rs.container.ContainerResponseContext
-import javax.ws.rs.container.ContainerResponseFilter
-import javax.ws.rs.core.EntityTag
-import javax.ws.rs.ext.Provider
 
 @Provider
 class EtagFilter : ContainerResponseFilter {
