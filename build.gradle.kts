@@ -29,8 +29,8 @@ group = "nstda.hii.webservice"
 version = "0.1" //gitVersion
 
 repositories {
+    gradlePluginPortal()
     mavenCentral()
-    jcenter()
 }
 
 dependencies {
