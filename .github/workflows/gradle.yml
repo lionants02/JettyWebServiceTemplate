@@ -33,7 +33,7 @@ jobs:
       - name: Build with Gradle
         uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
         with:
-          arguments: :test --tests "nstda.hii.webservice.app.helloworld.HelloWorldResourceTest"
+          arguments: :test --tests "nstda.hii.webservice.app.helloworld.HelloWorldResourceTest" --stacktrace
       - name: Build with Gradle2
         uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
         with:
