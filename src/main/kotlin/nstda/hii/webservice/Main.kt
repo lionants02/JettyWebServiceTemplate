@@ -39,6 +39,7 @@ class Main(val args: Array<String>) {
 
     fun start() {
         val server = server("0.0.0.0", port)
+        logger.info { "running port $port" }
         server.setRequestLog { request, response ->
             logger.info {
                 var message =
