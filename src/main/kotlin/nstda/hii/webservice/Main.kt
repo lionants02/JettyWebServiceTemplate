@@ -41,14 +41,10 @@ class Main(val args: Array<String>) {
         val server = server("0.0.0.0", port)
         server.setRequestLog { request, response ->
             logger.info {
-                var message = "HttpLog\t" +
-                        "Time:${System.currentTimeMillis()}\t" +
-                        "Status:${response.status}\t" +
-                        "Proto:${request.method}::" +
-                        request.originalURI
+                var message =
+                    "HttpLog\t" + "Time:${System.currentTimeMillis()}\t" + "Status:${response.status}\t" + "Proto:${request.method}::" + request.originalURI
                 request.headerNames.toList().forEach { key ->
-                    if (key != "Authorization")
-                        message += "\t$key:${request.getHeader(key)}"
+                    if (key != "Authorization") message += "\t$key:${request.getHeader(key)}"
                 }
                 message += "\tInputIpAddress:${request.remoteAddr}"
                 message

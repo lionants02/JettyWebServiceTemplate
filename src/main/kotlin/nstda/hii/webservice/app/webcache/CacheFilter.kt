@@ -38,11 +38,12 @@ class CacheFilter : ContainerResponseFilter {
         val cache: Cache? = resourceInfo.resourceMethod.getAnnotation(Cache::class.java)
             ?: resourceInfo.resourceClass.getAnnotation(Cache::class.java)
 
-        if (cache != null)
+        if (cache != null) {
             responseContext.headers.add(
                 "Cache-Control",
                 cache.toCacheControl().combineWith(requestContext.cacheControl).toString()
             )
+        }
     }
 
     private fun isCacheable(responseContext: ContainerResponseContext): Boolean {

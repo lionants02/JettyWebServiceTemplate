@@ -17,7 +17,13 @@
 
 package nstda.hii.webservice.app
 
-import com.fatboyindustrial.gsonjavatime.*
+import com.fatboyindustrial.gsonjavatime.InstantConverter
+import com.fatboyindustrial.gsonjavatime.LocalDateConverter
+import com.fatboyindustrial.gsonjavatime.LocalDateTimeConverter
+import com.fatboyindustrial.gsonjavatime.LocalTimeConverter
+import com.fatboyindustrial.gsonjavatime.OffsetDateTimeConverter
+import com.fatboyindustrial.gsonjavatime.OffsetTimeConverter
+import com.fatboyindustrial.gsonjavatime.ZonedDateTimeConverter
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
@@ -32,9 +38,19 @@ import jakarta.ws.rs.ext.MessageBodyWriter
 import jakarta.ws.rs.ext.Provider
 import nstda.hii.webservice.app.GsonJerseyProvider.Companion.hiiGson
 import nstda.hii.webservice.getLogger
-import java.io.*
+import java.io.IOException
+import java.io.InputStream
+import java.io.InputStreamReader
+import java.io.OutputStream
+import java.io.OutputStreamWriter
 import java.lang.reflect.Type
-import java.time.*
+import java.time.Instant
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.LocalTime
+import java.time.OffsetDateTime
+import java.time.OffsetTime
+import java.time.ZonedDateTime
 
 /**
  * ตั้งค่าตัวแปลง Object ที่ใช้ระหว่างการส่งข้อมูลไป Client ให้กลายเป็น JSON
