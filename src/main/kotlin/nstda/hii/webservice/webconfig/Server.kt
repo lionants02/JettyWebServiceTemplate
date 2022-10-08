@@ -27,7 +27,6 @@ import org.eclipse.jetty.util.thread.QueuedThreadPool
  * ตั้งค่าการทำงานของ jetty http nstda.hii.webservice.webconfig.server
  */
 fun server(host: String, port: Int): Server {
-
     return Server(threadPool).apply {
         handler = ServletBuilder.build()
         connectors = connectorFor(this, host, port)
@@ -35,9 +34,9 @@ fun server(host: String, port: Int): Server {
     }
 }
 
-private val MAX_THREADS = 500
-private val MIN_THREADS = 50
-private val IDLE_TIMEOUT = 6000
+private const val MAX_THREADS = 500
+private const val MIN_THREADS = 50
+private const val IDLE_TIMEOUT = 6000
 
 private val threadPool: QueuedThreadPool
     get() {

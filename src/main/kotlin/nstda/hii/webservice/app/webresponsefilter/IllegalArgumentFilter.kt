@@ -28,8 +28,9 @@ class IllegalArgumentFilter : ExceptionMapper<IllegalArgumentException> {
         val message = with(exception.message) {
             if (this != null && endsWith("Sex.NULL")) {
                 "sex รองรับการใส่ข้อมูลด้วย MALE FEMALE UNKNOWN เป็นตัวใหญ่ทั้งหมดเท่านั้น"
-            } else
+            } else {
                 exception.message
+            }
         }
         return ErrorDetail.build(WebApplicationException(message, exception, 400))
     }

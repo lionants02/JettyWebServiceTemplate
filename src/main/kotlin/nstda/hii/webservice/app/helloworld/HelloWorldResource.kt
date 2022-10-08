@@ -6,7 +6,13 @@ import jakarta.ws.rs.Path
 import jakarta.ws.rs.Produces
 import jakarta.ws.rs.core.MediaType
 import nstda.hii.webservice.app.webcache.Cache
-import java.time.*
+import java.time.Instant
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.LocalTime
+import java.time.OffsetDateTime
+import java.time.OffsetTime
+import java.time.ZonedDateTime
 
 @Path("/hello")
 @Produces(MediaType.APPLICATION_JSON)
@@ -17,7 +23,6 @@ class HelloWorldResource {
     @GET
     @Cache(maxAge = 5)
     fun hello(): HelloMessage {
-
         val zoneDateTime = ZonedDateTime.now()
         val offsetDateTime = zoneDateTime.toOffsetDateTime()
         val localDateTime = zoneDateTime.toLocalDateTime()
