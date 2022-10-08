@@ -95,7 +95,7 @@ tasks.register<Jar>("sourcesJar") {
 
 tasks.named<Jar>("jar") {
     configurations.compileClasspath.get().forEach { if (it.isDirectory) from(it) else from(zipTree(it)) }
-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    // duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 
     this.setProperty("archiveFileName","webservice.jar")
 
