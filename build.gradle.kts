@@ -29,8 +29,8 @@ group = "nstda.hii.webservice"
 version = "0.1" //gitVersion
 
 repositories {
+    gradlePluginPortal()
     mavenCentral()
-    jcenter()
 }
 
 dependencies {
@@ -95,10 +95,12 @@ tasks.register<Jar>("sourcesJar") {
 
 tasks.named<Jar>("jar") {
     configurations.compileClasspath.get().forEach { if (it.isDirectory) from(it) else from(zipTree(it)) }
+    // duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 
-    this.setProperty("archiveFileName","webservice.jar")
+    this.setProperty("archiveFileName", "webservice.jar")
 
     manifest {
+        attributes["Implementation-Title"] = "HII Webservice example"
         attributes["Main-Class"] = "nstda.hii.webservice.Main"
     }
 

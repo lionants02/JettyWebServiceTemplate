@@ -17,7 +17,7 @@
 
 <Configuration status="warn" name="HII-API" packages="nstda.hii.webservice">
     <Appenders>
-        <Console name="STDOUT" target="SYSTEM_OUT">
+        <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="%d %-5p [%t] %-5c{1} - %m%n"/>
         </Console>
 
@@ -37,7 +37,7 @@
 
     <Loggers>
         <Root level="debug">
-            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="Console"/>
             <AppenderRef ref="RollingFile" level="info"/>
         </Root>
     </Loggers>
