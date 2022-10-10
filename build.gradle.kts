@@ -42,8 +42,9 @@ dependencies {
     implementation("args4j:args4j:2.33")
 
     val log4jVersion = "2.19.0"
+    implementation("org.apache.logging.log4j:log4j-api:$log4jVersion")
     implementation("org.apache.logging.log4j:log4j-core:$log4jVersion")
-    implementation("org.apache.logging.log4j:log4j-slf4j-impl:$log4jVersion")
+    implementation("org.slf4j:slf4j-simple:2.0.3")
     implementation("io.github.microutils:kotlin-logging-jvm:3.0.0")
 
     implementation("redis.clients:jedis:4.2.3")
