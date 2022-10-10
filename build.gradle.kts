@@ -18,7 +18,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("com.github.johnrengelman.shadow") version "6.1.0"
+    id("com.github.johnrengelman.shadow") version "7.1.2"
     kotlin("jvm") version "1.7.20"
     id("org.jmailen.kotlinter") version "3.12.0"
     id("com.moonlitdoor.git-version") version "0.1.1"
