@@ -1,4 +1,6 @@
 FROM adoptopenjdk/openjdk11:jre-11.0.11_9
-COPY build/libs/webservice.jar .
+WORKDIR /webservice
+COPY build/libs/JettyWebServiceTemplate-0.1-all.jar .
+COPY src/main/resources/log4j2.xml .
 EXPOSE 8080/tcp
-CMD ["java","-jar","webservice.jar"]
+CMD ["java","-Dlog4j.configurationFile=log4j2.xml","-jar","webservice.jar"]
