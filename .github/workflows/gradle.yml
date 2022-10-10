@@ -42,5 +42,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: webservice.jar
-          path: build/libs/webservice.jar
+          path: build/libs/JettyWebServiceTemplate-0.1-all.jar
           retention-days: 1
