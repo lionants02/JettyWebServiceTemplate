@@ -18,7 +18,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    java
+    id("com.github.johnrengelman.shadow") version "6.1.0"
     kotlin("jvm") version "1.7.20"
     id("org.jmailen.kotlinter") version "3.12.0"
     id("com.moonlitdoor.git-version") version "0.1.1"
@@ -42,9 +42,10 @@ dependencies {
     implementation("args4j:args4j:2.33")
 
     val log4jVersion = "2.19.0"
+    implementation("org.apache.logging.log4j:log4j-api:$log4jVersion")
     implementation("org.apache.logging.log4j:log4j-core:$log4jVersion")
-    implementation("org.apache.logging.log4j:log4j-slf4j-impl:$log4jVersion")
-    implementation("io.github.microutils:kotlin-logging:3.0.0")
+    implementation("org.slf4j:slf4j-simple:2.0.3")
+    implementation("io.github.microutils:kotlin-logging-jvm:3.0.0")
 
     implementation("redis.clients:jedis:4.2.3")
 
@@ -88,16 +89,7 @@ tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "11"
 }
 
-tasks.register<Jar>("sourcesJar") {
-    archiveClassifier.set("sources")
-    from(sourceSets.main.get().allJava)
-}
-
 tasks.named<Jar>("jar") {
-    configurations.compileClasspath.get().forEach { if (it.isDirectory) from(it) else from(zipTree(it)) }
-    // duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-
-    this.setProperty("archiveFileName", "webservice.jar")
 
     manifest {
         attributes["Implementation-Title"] = "HII Webservice example"
