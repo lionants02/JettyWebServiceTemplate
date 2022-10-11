@@ -4,9 +4,9 @@ import nstda.hii.webservice.webconfig.server
 import org.amshove.kluent.`should be equal to`
 import org.eclipse.jetty.http.HttpStatus
 import org.eclipse.jetty.server.Server
-import org.junit.After
-import org.junit.Before
-import org.junit.Test
+import org.junit.jupiter.api.AfterEach
+import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Test
 import java.net.HttpURLConnection
 import java.net.URL
 
@@ -14,13 +14,13 @@ internal class HelloWorldResourceTest {
 
     private lateinit var server: Server
 
-    @Before
+    @BeforeEach
     fun setUp() {
         server = server("0.0.0.0", 8954)
         server.start()
     }
 
-    @After
+    @AfterEach
     fun tearDown() {
         try {
             server.stop()

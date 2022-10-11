@@ -30,11 +30,11 @@ jobs:
         with:
           java-version: '11'
           distribution: 'temurin'
-      - name: Build with Gradle check format
+      - name: Test
         uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
         with:
-          arguments: formatKotlin
-      - name: Build with Gradle jar
+          arguments: build
+      - name: Build jar
         uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
         with:
           arguments: shadowJar
