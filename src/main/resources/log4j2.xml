@@ -21,17 +21,17 @@
             <PatternLayout pattern="%d %-5p [%t] %-5c{1} - %m%n"/>
         </Console>
 
-<!--        <RollingFile name="RollingFile" fileName="app.log"
-                     filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
-            <PatternLayout>
-                <pattern>%d{ISO8601_OFFSET_DATE_TIME_HHCMM} %p %c{1.} [%t] %m%n</pattern>
-            </PatternLayout>
-            <Policies>
-                <TimeBasedTriggeringPolicy/>
-                <SizeBasedTriggeringPolicy size="3 MB"/>
-            </Policies>
-            <DefaultRolloverStrategy max="2"/>
-        </RollingFile>-->
+        <!--        <RollingFile name="RollingFile" fileName="app.log"
+                             filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+                    <PatternLayout>
+                        <pattern>%d{ISO8601_OFFSET_DATE_TIME_HHCMM} %p %c{1.} [%t] %m%n</pattern>
+                    </PatternLayout>
+                    <Policies>
+                        <TimeBasedTriggeringPolicy/>
+                        <SizeBasedTriggeringPolicy size="3 MB"/>
+                    </Policies>
+                    <DefaultRolloverStrategy max="2"/>
+                </RollingFile>-->
 
     </Appenders>
 
